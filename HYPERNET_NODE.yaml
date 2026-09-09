@@ -1,0 +1,25 @@
+schema: ghost-atlas.hypernet.node/v1
+node_id: navi-3-3
+repository: Atlas-Ascend/Navi-3.3---Governance-Cognitive-Pattern-Recognition
+organism_root: Atlas-Ascend/VISHVARUPA-Software-Hardware-Organism
+version: 0.1.0
+lifecycle: active-candidate
+plane: cognition-world-model
+canonical_role: governance-cognitive-pattern-recognition
+authority:
+  owns: [governance-pattern-signals, policy-pattern-analysis, cognitive-risk-signals]
+  does_not_own: [executive-authorization, diagnosis, autonomous-enforcement, finish-truth]
+upstream: [Atlas-Ascend/thoth-archive-engine, Atlas-Ascend/RHSIE-3.3, Atlas-Ascend/Mind-As-OS-]
+downstream: [Atlas-Ascend/Atlas-Mind-LLM, Atlas-Ascend/Janus-Prime, Atlas-Ascend/Janus-Odin]
+integration:
+  work_substrate: Atlas-Ascend/Packet-OS
+  orchestration: Atlas-Ascend/workforce-spine
+  io: Atlas-Ascend/Crowngrid
+  quality: Atlas-Ascend/SECA
+  security: Atlas-Ascend/Medusa-Sovereign-Security
+  memory: Atlas-Ascend/thoth-archive-engine
+  failure: Atlas-Ascend/PROMETHEUS-V-1.1.1
+proof:
+  runtime_state: unverified
+  inference_is_not_external_fact: true
+  repository_presence_is_not_runtime_proof: true
