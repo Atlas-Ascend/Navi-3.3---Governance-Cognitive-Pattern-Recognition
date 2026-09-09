@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ghostatlas.example/schemas/navi/observation.schema.json",
+  "title": "NAVI Observation",
+  "type": "object",
+  "required": ["schema_version", "observation_id", "source_system", "source_record_id", "observed_at", "ingested_at", "event_type", "payload", "security_classification", "correlation_id"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "observation_id": {"type": "string", "minLength": 1},
+    "source_system": {"type": "string", "minLength": 1},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "ingested_at": {"type": "string", "format": "date-time"},
+    "entity_refs": {"type": "array", "items": {"type": "string"}, "default": []},
+    "case_refs": {"type": "array", "items": {"type": "string"}, "default": []},
+    "event_type": {"type": "string", "minLength": 1},
+    "payload": {},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "default": []},
+    "security_classification": {"type": "string", "minLength": 1},
+    "correlation_id": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}
