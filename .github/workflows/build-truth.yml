@@ -1,0 +1,52 @@
+name: NAVI Build Truth Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-truth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical Build Truth files
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            BUILD_TRUTH/01_CANON.md
+            BUILD_TRUTH/02_MISSION.md
+            BUILD_TRUTH/03_SCOPE.md
+            BUILD_TRUTH/04_REQUIREMENTS.md
+            BUILD_TRUTH/05_ARCHITECTURE.md
+            BUILD_TRUTH/06_COMPONENTS.md
+            BUILD_TRUTH/07_DATA_CONTRACTS.md
+            BUILD_TRUTH/08_AGENT_CONTRACTS.md
+            BUILD_TRUTH/09_WORKFLOWS.md
+            BUILD_TRUTH/10_INTEGRATIONS.md
+            BUILD_TRUTH/11_GOVERNANCE.md
+            BUILD_TRUTH/12_SECURITY.md
+            BUILD_TRUTH/13_TESTING.md
+            BUILD_TRUTH/14_DEPLOYMENT.md
+            BUILD_TRUTH/15_PROOF.md
+            BUILD_TRUTH/16_DEFINITION_OF_DONE.md
+          )
+          for f in "${required[@]}"; do
+            test -s "$f" || { echo "Missing/empty required file: $f"; exit 1; }
+          done
+          echo "NAVI_BUILD_TRUTH=PASS"
+      - name: Verify core architecture and schemas
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s docs/system-design/ARCHITECTURE.md
+          test -s docs/pattern-taxonomy/PATTERN_TAXONOMY.md
+          test -s docs/handoff-contracts/HANDOFF_MATRIX.md
+          python -m json.tool schemas/observation.schema.json >/dev/null
+          python -m json.tool schemas/pattern-signal.schema.json >/dev/null
+          echo "NAVI_CANONICAL_SCAFFOLD=PASS"
