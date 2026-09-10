@@ -1,0 +1,16 @@
+{
+  "event_id": "GA-PLUGIN-RUNTIME-CANARY-20260909T193035-0700",
+  "packet_id": "PKT-GA-PLUGIN-RUNTIME-001",
+  "correlation_id": "COR-GA-PLUGIN-RUNTIME-001",
+  "pattern_organ": "NAVI",
+  "maat_state_commit": "2bd1f9bc8073a2e1286f5991a015e611259a8b8e",
+  "signals": [
+    {"signal":"CONNECTED_PROVIDER_MULTI_SURFACE_ROUTE","state":"OBSERVED"},
+    {"signal":"CAPABILITY_FIRST_WRITE_PROOF","state":"OBSERVED"},
+    {"signal":"UNPROVISIONED_PROVIDER_BYPASS","state":"PRESERVED"},
+    {"signal":"EVIDENCE_AND_SECURITY_GATES","state":"PASSED"}
+  ],
+  "drift": [],
+  "recommendation": "RETURN_TO_JANUS_AS_CLOSED_LOOP_SUCCESS",
+  "evidence_class": "GOVERNANCE_PATTERN_FEEDBACK_RECEIPT"
+}
