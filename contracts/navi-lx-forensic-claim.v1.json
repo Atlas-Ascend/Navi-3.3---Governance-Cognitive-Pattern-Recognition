@@ -1,0 +1,48 @@
+{
+  "schema": "ghost-atlas.navi-lx.forensic-claim.v1",
+  "baseline": "2026-09-10",
+  "owner": "NAVI",
+  "casegraph": "MAAT-Universal-CaseGraph",
+  "archive": "thoth-archive-engine",
+  "event_transport": "Ghost-Atlas-Estate-Event-Gateway",
+  "governance": "Janus/Odin",
+  "security": "Medusa",
+  "verification": "SECA/DevOS/ProofGrid",
+  "claim_states": [
+    "ALLEGED",
+    "SUPPORTED",
+    "CONTRADICTED",
+    "UNDETERMINED",
+    "RETRACTED"
+  ],
+  "required_fields": [
+    "caseId",
+    "claimId",
+    "claimText",
+    "scope",
+    "state",
+    "sourceRefs",
+    "limitations",
+    "contradictionRefs",
+    "privacyClass",
+    "correlationId",
+    "missionId"
+  ],
+  "rules": [
+    "association_is_not_criminal_complicity",
+    "hypothesis_is_not_proof",
+    "preserve_contradictory_records",
+    "no_sensitive_victim_publication",
+    "no_promotion_without_source_bytes_and_seca_receipt",
+    "no_external_action_without_authorization"
+  ],
+  "seed_packet": {
+    "packetId": "NAVI-LX-EPSTEIN-P0",
+    "source_description": "DOJ OPR November 12 2020 findings",
+    "source_status": "NOT_INGESTED",
+    "source_bytes_ingested": 0,
+    "claim_status": "PENDING_PRIMARY_SOURCE",
+    "next_action": "ingest public OPR primary source and hash actual bytes",
+    "promotion": "BLOCKED_UNTIL_VERIFIED"
+  }
+}
